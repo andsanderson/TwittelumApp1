@@ -7,6 +7,7 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import b.com.caelum.twittelumapp.modelo.Tweet
 
 class TweetActivity : AppCompatActivity() {
 
@@ -63,8 +64,11 @@ class TweetActivity : AppCompatActivity() {
     private fun MostrarToast ()
     {
         val editTweet = findViewById<EditText>(R.id.edtTweet)
-        val texto = editTweet.text
+        val texto = editTweet.text.toString()
 
-        Toast.makeText(this,texto,Toast.LENGTH_LONG).show()
+        val tweet = Tweet(texto)
+
+
+        Toast.makeText(this,"$tweet",Toast.LENGTH_LONG).show()
     }
 }
