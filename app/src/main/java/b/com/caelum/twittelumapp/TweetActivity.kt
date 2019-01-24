@@ -7,7 +7,9 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import b.com.caelum.twittelumapp.bancodedados.TwittelumDatabase
 import b.com.caelum.twittelumapp.modelo.Tweet
+import kotlinx.android.synthetic.main.activity_tweet.*
 
 class TweetActivity : AppCompatActivity() {
 
@@ -57,7 +59,11 @@ class TweetActivity : AppCompatActivity() {
 
     private  fun publicarTweet()
     {
-        MostrarToast()
+        val mensagemDoTweet :String = edtTweet.text.toString()
+        val tweet = Tweet(mensagemDoTweet)
+        val tweetDao = TwittelumDatabase.getInstance(this).tweetDao()
+        tweetDao.salva(tweet)
+        Toast.makeText(this,"$tweet foi salvo com sucesso :D", Toast.LENGTH_LONG).show()
     }
 
 
