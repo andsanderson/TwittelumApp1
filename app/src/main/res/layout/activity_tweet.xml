@@ -27,5 +27,20 @@
             app:layout_constraintTop_toBottomOf="@+id/edtTweet" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="10dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="10dp"/>-->
+    <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_margin="5dp"
+            android:paddingBottom="5dp"
+            app:cardCornerRadius="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edtTweet">
+            <ImageView
+                    android:id="@+id/tweet_foto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                />
+    </android.support.v7.widget.CardView>
 
 </android.support.constraint.ConstraintLayout>
