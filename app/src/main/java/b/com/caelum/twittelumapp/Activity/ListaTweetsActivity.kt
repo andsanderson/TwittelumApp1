@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter
 import b.com.caelum.twittelumapp.R
 import b.com.caelum.twittelumapp.ViewModel.TweetViewModel
 import b.com.caelum.twittelumapp.ViewModel.ViewModelFactory
+import b.com.caelum.twittelumapp.adapter.TweetAdapter
 import b.com.caelum.twittelumapp.bancodedados.TwittelumDatabase
 import b.com.caelum.twittelumapp.modelo.Tweet
 import kotlinx.android.synthetic.main.activity_lista_tweets.*
@@ -43,8 +44,7 @@ class ListaTweetsActivity: AppCompatActivity() {
     }
 
     private fun observer(): Observer<List<Tweet>> {
-        return Observer {
-            lstTweets.adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,it)
+        return Observer {lstTweets.adapter = TweetAdapter(it!!)
         }
     }
 
